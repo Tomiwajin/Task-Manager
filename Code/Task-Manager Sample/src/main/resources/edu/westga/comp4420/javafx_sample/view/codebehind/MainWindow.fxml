@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.AnchorPane?>
-
-<AnchorPane minHeight="99.0" minWidth="160.0" prefHeight="380.0" prefWidth="474.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.javafx_sample.view.codebehind.MainWindow" />
