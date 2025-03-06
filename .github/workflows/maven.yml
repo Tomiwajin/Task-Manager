@@ -30,6 +30,6 @@ jobs:
     - name: Build with Maven
       run: |
         echo Testing Project
-        cd "Code/Task-Manager Sample/"
+        cd "Code/Task-Manager-App/"
         mvn --batch-mode --update-snapshots clean verify
         cd ../..
