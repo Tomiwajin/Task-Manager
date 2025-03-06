@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <fileset-config file-format-version="1.2.0" simple-config="false" sync-formatter="false">
-  <local-check-config name="maven-checkstyle-plugin validate" location="file:/Users/apple/Downloads/Grocery%20List%20JavaFX%20Sample-2-3/devops_checks.xml" type="remote" description="maven-checkstyle-plugin configuration validate">
+  <local-check-config name="maven-checkstyle-plugin validate" location="file:/Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App/devops_checks.xml" type="remote" description="maven-checkstyle-plugin configuration validate">
     <property name="checkstyle.header.file" value="/Users/apple/Desktop/Dev-Ops workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Task-Manger-App/com.basistech.m2e.code.quality.checkstyleConfigurator/checkstyle-header-validate.txt"/>
     <property name="checkstyle.cache.file" value="${project_loc}/target/checkstyle-cachefile"/>
   </local-check-config>
