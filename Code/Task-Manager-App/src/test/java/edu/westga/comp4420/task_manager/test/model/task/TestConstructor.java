@@ -31,11 +31,11 @@ class TestConstructor {
 
     @ParameterizedTest
     @CsvSource({
-        ", Description, 2025-03-10, true",            // null title
-        "'', Description, 2025-03-10, false",         // empty title
-        "Title,, 2025-03-10, true",                    // null description
-        "Title, Description,, true",                   // null dueDate
-        "Title, Description, '', false"                // empty dueDate
+        ", Description, 2025-03-10, true",            
+        "'', Description, 2025-03-10, false",         
+        "Title,, 2025-03-10, true",                   
+        "Title, Description,, true",                   
+        "Title, Description, '', false"                
     })
     void testInvalidInput(String title, String description, String dueDate, boolean isCompleted) {
         assertThrows(IllegalArgumentException.class, () -> {
