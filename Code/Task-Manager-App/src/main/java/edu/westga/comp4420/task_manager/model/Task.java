@@ -4,7 +4,7 @@ package edu.westga.comp4420.task_manager.model;
  * Represents an instance of a task.
  * 
  * @author Tomiwa Jinadu
- * 
+ * @version Spring 2025
  */
 public class Task {
 
@@ -16,12 +16,38 @@ public class Task {
     /**
      * Constructs a Task object.
      * 
+     * @precondition title != null &&
+     *               !title.isEmpty() &&
+     *               description != null &&
+     *               dueDate != null &&
+     *               !dueDate.isEmpty()
+     * @postcondition getTitle().equals(title) &&
+     *                getDescription().equals(description) &&
+     *                getDueDate().equals(dueDate) &&
+     *                isCompleted() == isCompleted
+     * 
      * @param title       the title of the task
      * @param description the description of the task
      * @param dueDate     the due date of the task
      * @param isCompleted whether the task is completed
      */
     public Task(String title, String description, String dueDate, boolean isCompleted) {
+        if (title == null) {
+            throw new IllegalArgumentException("Title cannot be null.");
+        }
+        if (title.isEmpty()) {
+            throw new IllegalArgumentException("Title cannot be empty.");
+        }
+        if (description == null) {
+            throw new IllegalArgumentException("Description cannot be null.");
+        }
+        if (dueDate == null) {
+            throw new IllegalArgumentException("Due date cannot be null.");
+        }
+        if (dueDate.isEmpty()) {
+            throw new IllegalArgumentException("Due date cannot be empty.");
+        }
+
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
