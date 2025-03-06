@@ -1,6 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Task.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Task-Manager-App</a> &gt; <a href="index.source.html" class="el_package">edu.westga.comp4420.task_manager.model</a> &gt; <span class="el_source">Task.java</span></div><h1>Task.java</h1><pre class="source lang-java linenums">package edu.westga.comp4420.task_manager.model;
 
-<span class="nc" id="L3">public class Task {</span>
+/**
+ * Represents an instance of a task.
+ * 
+ * @author Tomiwa Jinadu
+ * @version Spring 2025
+ */
+public class Task {
 
+    private String title;
+    private String description;
+    private String dueDate;
+    private boolean isCompleted;
+
+    /**
+     * Constructs a Task object.
+     * 
+     * @precondition title != null &amp;&amp;
+     *               !title.isEmpty() &amp;&amp;
+     *               description != null &amp;&amp;
+     *               dueDate != null &amp;&amp;
+     *               !dueDate.isEmpty()
+     * @postcondition getTitle().equals(title) &amp;&amp;
+     *                getDescription().equals(description) &amp;&amp;
+     *                getDueDate().equals(dueDate) &amp;&amp;
+     *                isCompleted() == isCompleted
+     * 
+     * @param title       the title of the task
+     * @param description the description of the task
+     * @param dueDate     the due date of the task
+     * @param isCompleted whether the task is completed
+     */
+<span class="fc" id="L34">    public Task(String title, String description, String dueDate, boolean isCompleted) {</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (title == null) {</span>
+<span class="fc" id="L36">            throw new IllegalArgumentException(&quot;Title cannot be null.&quot;);</span>
+        }
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        if (title.isEmpty()) {</span>
+<span class="fc" id="L39">            throw new IllegalArgumentException(&quot;Title cannot be empty.&quot;);</span>
+        }
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if (description == null) {</span>
+<span class="fc" id="L42">            throw new IllegalArgumentException(&quot;Description cannot be null.&quot;);</span>
+        }
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (dueDate == null) {</span>
+<span class="fc" id="L45">            throw new IllegalArgumentException(&quot;Due date cannot be null.&quot;);</span>
+        }
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (dueDate.isEmpty()) {</span>
+<span class="fc" id="L48">            throw new IllegalArgumentException(&quot;Due date cannot be empty.&quot;);</span>
+        }
+
+<span class="fc" id="L51">        this.title = title;</span>
+<span class="fc" id="L52">        this.description = description;</span>
+<span class="fc" id="L53">        this.dueDate = dueDate;</span>
+<span class="fc" id="L54">        this.isCompleted = isCompleted;</span>
+<span class="fc" id="L55">    }</span>
+
+    /**
+     * Gets the title of the task.
+     * 
+     * @return the title
+     */
+    public String getTitle() {
+<span class="fc" id="L63">        return this.title;</span>
+    }
+
+    /**
+     * Sets the title of the task.
+     * 
+     * @param title the new title
+     */
+    public void setTitle(String title) {
+<span class="nc" id="L72">        this.title = title;</span>
+<span class="nc" id="L73">    }</span>
+
+    /**
+     * Gets the description of the task.
+     * 
+     * @return the description
+     */
+    public String getDescription() {
+<span class="fc" id="L81">        return this.description;</span>
+    }
+
+    /**
+     * Sets the description of the task.
+     * 
+     * @param description the new description
+     */
+    public void setDescription(String description) {
+<span class="nc" id="L90">        this.description = description;</span>
+<span class="nc" id="L91">    }</span>
+
+    /**
+     * Gets the due date of the task.
+     * 
+     * @return the due date
+     */
+    public String getDueDate() {
+<span class="fc" id="L99">        return this.dueDate;</span>
+    }
+
+    /**
+     * Sets the due date of the task.
+     * 
+     * @param dueDate the new due date
+     */
+    public void setDueDate(String dueDate) {
+<span class="nc" id="L108">        this.dueDate = dueDate;</span>
+<span class="nc" id="L109">    }</span>
+
+    /**
+     * Checks if the task is completed.
+     * 
+     * @return true if completed, false otherwise
+     */
+    public boolean isCompleted() {
+<span class="fc" id="L117">        return this.isCompleted;</span>
+    }
+
+    /**
+     * Sets the task's completion status.
+     * 
+     * @param completed true if completed, false otherwise
+     */
+    public void setCompleted(boolean completed) {
+<span class="nc" id="L126">        this.isCompleted = completed;</span>
+<span class="nc" id="L127">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L131">        return &quot;Task{&quot; + &quot;title='&quot; + this.title + '\'' + &quot;, dueDate='&quot; + this.dueDate + '\'' + &quot;, completed=&quot;</span>
+                + this.isCompleted + '}';
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
