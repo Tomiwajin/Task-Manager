@@ -40,6 +40,9 @@ public class MainWindow {
     @FXML
     private Button addTaskButton;
 
+    @FXML
+    private Button editTaskButton;
+
     private ObservableList<Task> taskList;
 
     public MainWindow() {
@@ -93,11 +96,45 @@ public class MainWindow {
             addTaskStage.showAndWait();
 
         } catch (IOException e) {
-        	e.printStackTrace();
+            e.printStackTrace();
             Alert errorBox = new Alert(Alert.AlertType.ERROR);
             errorBox.setContentText("Unable to open add task window");
             errorBox.showAndWait();
         }
     }
 
+    @FXML
+    private void handleEditTaskButtonAction() {
+        Task selectedTask = this.taskTable.getSelectionModel().getSelectedItem();
+        if (selectedTask == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("No Task Selected");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select a task to edit.");
+            alert.showAndWait();
+            return;
+        }
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource(Main.EDIT_TASK_WINDOW_RESOURCE));
+            loader.load();
+            Parent parent = loader.getRoot();
+            Scene scene = new Scene(parent);
+            Stage editTaskStage = new Stage();
+            editTaskStage.setTitle("Edit Task");
+            editTaskStage.setScene(scene);
+            editTaskStage.initModality(Modality.APPLICATION_MODAL);
+            EditTaskWindow editTaskWindowController = (EditTaskWindow) loader.getController();
+            editTaskWindowController.setTaskToEdit(selectedTask);
+            editTaskStage.showAndWait();
+
+            this.taskTable.refresh();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert errorBox = new Alert(Alert.AlertType.ERROR);
+            errorBox.setContentText("Unable to open edit task window");
+            errorBox.showAndWait();
+        }
+    }
 }
