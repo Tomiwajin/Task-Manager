@@ -22,6 +22,8 @@
             <TableColumn fx:id="dueDateColumn" prefWidth="79.0" text="Due Date" />
         </columns>
       </TableView>
-      <Button fx:id="addTaskButton" layoutX="430.0" layoutY="428.0" mnemonicParsing="false" onAction="#handleAddTaskButtonAction" text="Add Task" />
+      <Button fx:id="addTaskButton" layoutX="14.0" layoutY="427.0" mnemonicParsing="false" onAction="#handleAddTaskButtonAction" text="Add Task" />
+      <Button fx:id="deleteTaskButton" layoutX="417.0" layoutY="427.0" mnemonicParsing="false" text="Delete Task" />
+      <Button fx:id="editTaskButton" layoutX="228.0" layoutY="428.0" mnemonicParsing="false" onAction="#handleEditTaskButtonAction" text="Edit Task" />
    </children>
 </AnchorPane>
