@@ -11,14 +11,12 @@ import javafx.scene.Scene;
 /**
  * Entry point for the program
  *
- * @author	Comp 4420
+ * @author	Tomiwa Jinadu
  * @version Spring 2025
  */
 public class Main extends Application {
-	public static final String WINDOW_TITLE = "JavaFX Sample";
+	public static final String WINDOW_TITLE = "Task Manager";
 	public static final String MAIN_WINDOW_RESOURCE = "view/codebehind/MainWindow.fxml";
-	public static final String ADD_ITEM_WINDOW_RESOURCE = "view/codebehind/AddItemWindow.fxml";
-	public static final String UPDATE_ITEM_WINDOW_RESOURCE = "view/codebehind/UpdateItemWindow.fxml";
 
 	/**
 	 * JavaFX entry point.
