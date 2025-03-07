@@ -5,13 +5,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
 
 import java.time.LocalDate;
 
@@ -37,12 +37,19 @@ public class AddTaskWindow {
 
     @FXML
     private Button cancelButton;
+    
+    @FXML 
+    private AnchorPane guiPane;
 
-    private Stage dialogStage;
+ 
     private Task newTask;
 
     
     private ObservableList<Task> taskList;
+    
+    private void closeWindow() {
+		this.guiPane.getScene().getWindow().hide();
+	}
 
     
     public void setTaskList(ObservableList<Task> taskList) {
@@ -50,9 +57,6 @@ public class AddTaskWindow {
     }
 
     
-    public void setDialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
-    }
 
     
     @FXML
@@ -84,12 +88,12 @@ public class AddTaskWindow {
 
         this.taskList.add(this.newTask);
 
-        this.dialogStage.close();
+        this.closeWindow();
     }
 
     @FXML
     private void handleCancelButtonAction() {
-        this.dialogStage.close();
+    	this.closeWindow();
     }
 
   

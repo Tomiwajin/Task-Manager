@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 public class Main extends Application {
 	public static final String WINDOW_TITLE = "Task Manager";
 	public static final String MAIN_WINDOW_RESOURCE = "view/codebehind/MainWindow.fxml";
+	public static final String ADD_TASK_WINDOW_RESOURCE = "view/codebehind/AddTaskWindow.fxml";
 
 	/**
 	 * JavaFX entry point.
