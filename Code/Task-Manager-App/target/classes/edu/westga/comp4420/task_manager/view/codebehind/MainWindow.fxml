@@ -2,28 +2,26 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="guiPane" minHeight="99.0" minWidth="160.0" prefHeight="380.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/21.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.task_manager.view.codebehind.MainWindow">
+<AnchorPane fx:id="MainWindow" minHeight="99.0" minWidth="160.0" prefHeight="478.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.task_manager.view.codebehind.MainWindow">
    <children>
-      <ListView fx:id="groceryItems" layoutX="14.0" layoutY="45.0" prefHeight="323.0" prefWidth="228.0" />
-      <Label layoutX="56.0" layoutY="14.0" text="Grocery Items">
+      <Label layoutX="190.0" layoutY="14.0" text="Task Manager">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Button layoutX="249.0" layoutY="46.0" mnemonicParsing="false">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="249.0" layoutY="77.0" mnemonicParsing="false">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="244.0" layoutY="113.0" mnemonicParsing="false"/>
+      <TableView fx:id="taskTable" layoutX="12.0" layoutY="55.0" prefHeight="361.0" prefWidth="487.0">
+        <columns>
+          <TableColumn fx:id="statusColumn" prefWidth="75.0" text="Status" />
+          <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="descriptionColumn" prefWidth="257.0" text="Description" />
+            <TableColumn fx:id="dueDateColumn" prefWidth="79.0" text="Due Date" />
+        </columns>
+      </TableView>
+      <Button fx:id="addTaskButton" layoutX="430.0" layoutY="428.0" mnemonicParsing="false" text="Add Task" />
    </children>
 </AnchorPane>
