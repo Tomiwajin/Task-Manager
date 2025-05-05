@@ -71,12 +71,12 @@ public class MainWindow {
 <span class="nc" id="L71">                super.updateItem(item, empty);</span>
 <span class="nc bnc" id="L72" title="All 4 branches missed.">                if (empty || item == null) {</span>
 <span class="nc" id="L73">                    setText(null);</span>
-                } else {
+<span class="nc" id="L74">                } else {</span>
 <span class="nc" id="L75">                    boolean isCompleted = Boolean.parseBoolean(item);</span>
 <span class="nc bnc" id="L76" title="All 2 branches missed.">                    setText(isCompleted ? &quot;Complete&quot; : &quot;Incomplete&quot;);</span>
                 }
 <span class="nc" id="L78">            }</span>
-        });
+<span class="nc" id="L79">        });</span>
 
 <span class="nc" id="L81">        this.taskTable.setItems(this.taskList);</span>
 <span class="nc" id="L82">    }</span>
@@ -105,7 +105,7 @@ public class MainWindow {
 <span class="nc" id="L105">            Alert errorBox = new Alert(Alert.AlertType.ERROR);</span>
 <span class="nc" id="L106">            errorBox.setContentText(&quot;Unable to open add task window&quot;);</span>
 <span class="nc" id="L107">            errorBox.showAndWait();</span>
-<span class="nc" id="L108">        }</span>
+        }
 <span class="nc" id="L109">    }</span>
 
     @FXML
@@ -140,7 +140,7 @@ public class MainWindow {
 <span class="nc" id="L140">            Alert errorBox = new Alert(Alert.AlertType.ERROR);</span>
 <span class="nc" id="L141">            errorBox.setContentText(&quot;Unable to open edit task window&quot;);</span>
 <span class="nc" id="L142">            errorBox.showAndWait();</span>
-<span class="nc" id="L143">        }</span>
+        }
 <span class="nc" id="L144">    }</span>
     
     @FXML
