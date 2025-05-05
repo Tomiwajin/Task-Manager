@@ -18,12 +18,12 @@
 		<dependency> 
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
-			<version>21</version>
+			<version>22.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-fxml</artifactId>
-			<version>21</version>
+			<version>22.0.2</version>
 		</dependency>
 		<!-- JUnit 5 -->
 		<dependency>
@@ -106,7 +106,7 @@
 			<plugin><!-- generates code coverage report and requires minimum code coverage when executing test command -->
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.7</version>
+				<version>0.8.10</version>
 				<executions>
 					<execution>
 						<goals>

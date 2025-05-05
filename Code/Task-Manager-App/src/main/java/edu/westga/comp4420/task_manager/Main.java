@@ -19,6 +19,7 @@ public class Main extends Application {
 	public static final String MAIN_WINDOW_RESOURCE = "view/codebehind/MainWindow.fxml";
 	public static final String ADD_TASK_WINDOW_RESOURCE = "view/codebehind/AddTaskWindow.fxml";
 	public static final String EDIT_TASK_WINDOW_RESOURCE = "view/codebehind/EditTaskWindow.fxml";
+	public static final String VIEW_TASK_WINDOW_RESOURCE = "view/codebehind/viewTaskWindow.fxml";
 	/**
 	 * JavaFX entry point.
 	 *

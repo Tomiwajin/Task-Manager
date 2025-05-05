@@ -79,6 +79,14 @@ public class MainWindow {
         });
 
         this.taskTable.setItems(this.taskList);
+        
+        this.taskTable.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2 && !this.taskTable.getSelectionModel().isEmpty()) {
+                Task selectedTask = this.taskTable.getSelectionModel().getSelectedItem();
+                this.showTaskDetailsWindow(selectedTask);
+            }
+        });
+
     }
 
     @FXML
@@ -168,4 +176,31 @@ public class MainWindow {
             }
         });
     }
+    
+    private void showTaskDetailsWindow(Task task) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource(Main.VIEW_TASK_WINDOW_RESOURCE));
+            loader.load();
+
+            Parent parent = loader.getRoot();
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setTitle("Task Details");
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+
+            TaskDetailsWindow controller = loader.getController();
+            controller.setTask(task);
+
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert errorBox = new Alert(Alert.AlertType.ERROR);
+            errorBox.setContentText("Unable to open task details window.");
+            errorBox.showAndWait();
+        }
+    }
+
+
 }

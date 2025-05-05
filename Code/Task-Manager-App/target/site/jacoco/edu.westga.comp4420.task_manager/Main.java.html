@@ -11,15 +11,14 @@ import javafx.scene.Scene;
 /**
  * Entry point for the program
  *
- * @author	Comp 4420
+ * @author	Tomiwa Jinadu
  * @version Spring 2025
  */
 <span class="nc" id="L17">public class Main extends Application {</span>
-	public static final String WINDOW_TITLE = &quot;JavaFX Sample&quot;;
+	public static final String WINDOW_TITLE = &quot;Task Manager&quot;;
 	public static final String MAIN_WINDOW_RESOURCE = &quot;view/codebehind/MainWindow.fxml&quot;;
-	public static final String ADD_ITEM_WINDOW_RESOURCE = &quot;view/codebehind/AddItemWindow.fxml&quot;;
-	public static final String UPDATE_ITEM_WINDOW_RESOURCE = &quot;view/codebehind/UpdateItemWindow.fxml&quot;;
-
+	public static final String ADD_TASK_WINDOW_RESOURCE = &quot;view/codebehind/AddTaskWindow.fxml&quot;;
+	public static final String EDIT_TASK_WINDOW_RESOURCE = &quot;view/codebehind/EditTaskWindow.fxml&quot;;
 	/**
 	 * JavaFX entry point.
 	 *
@@ -30,12 +29,12 @@ import javafx.scene.Scene;
 	 */
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-<span class="nc" id="L33">		Parent parent = FXMLLoader.load(getClass().getResource(Main.MAIN_WINDOW_RESOURCE));</span>
-<span class="nc" id="L34">		Scene scene = new Scene(parent);</span>
-<span class="nc" id="L35">		primaryStage.setTitle(WINDOW_TITLE);</span>
-<span class="nc" id="L36">		primaryStage.setScene(scene);</span>
-<span class="nc" id="L37">		primaryStage.show();</span>
-<span class="nc" id="L38">	}</span>
+<span class="nc" id="L32">		Parent parent = FXMLLoader.load(getClass().getResource(Main.MAIN_WINDOW_RESOURCE));</span>
+<span class="nc" id="L33">		Scene scene = new Scene(parent);</span>
+<span class="nc" id="L34">		primaryStage.setTitle(WINDOW_TITLE);</span>
+<span class="nc" id="L35">		primaryStage.setScene(scene);</span>
+<span class="nc" id="L36">		primaryStage.show();</span>
+<span class="nc" id="L37">	}</span>
 
 	/**
 	 * Primary Java entry point.
@@ -47,7 +46,7 @@ import javafx.scene.Scene;
 	 *            command line arguments
 	 */
 	public static void main(String[] args) {
-<span class="nc" id="L50">		Main.launch(args);</span>
-<span class="nc" id="L51">	}</span>
+<span class="nc" id="L49">		Main.launch(args);</span>
+<span class="nc" id="L50">	}</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,69 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.243" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.318" tests="7" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.specification.version" value="23"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App/target/test-classes:/Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App/target/classes:/Users/apple/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/Users/apple/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-mac.jar:/Users/apple/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/Users/apple/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-mac.jar:/Users/apple/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/Users/apple/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-mac.jar:/Users/apple/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:/Users/apple/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-mac.jar:/Users/apple/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.1/junit-jupiter-api-5.5.1.jar:/Users/apple/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/apple/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple/.m2/repository/org/junit/platform/junit-platform-commons/1.5.1/junit-platform-commons-1.5.1.jar:/Users/apple/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.5.1/junit-jupiter-params-5.5.1.jar:/Users/apple/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.1/junit-jupiter-engine-5.5.1.jar:/Users/apple/.m2/repository/org/junit/platform/junit-platform-engine/1.5.1/junit-platform-engine-1.5.1.jar:"/>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\ojinadu1\Documents\GitHub\Task-Manager\Code\Task-Manager-App\target\test-classes;C:\Users\ojinadu1\Documents\GitHub\Task-Manager\Code\Task-Manager-App\target\classes;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-controls\22.0.2\javafx-controls-22.0.2.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-controls\22.0.2\javafx-controls-22.0.2-win.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-graphics\22.0.2\javafx-graphics-22.0.2.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-graphics\22.0.2\javafx-graphics-22.0.2-win.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-base\22.0.2\javafx-base-22.0.2.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-base\22.0.2\javafx-base-22.0.2-win.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-fxml\22.0.2\javafx-fxml-22.0.2.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-fxml\22.0.2\javafx-fxml-22.0.2-win.jar;C:\Users\ojinadu1\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.1\junit-jupiter-api-5.5.1.jar;C:\Users\ojinadu1\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\ojinadu1\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ojinadu1\.m2\repository\org\junit\platform\junit-platform-commons\1.5.1\junit-platform-commons-1.5.1.jar;C:\Users\ojinadu1\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.5.1\junit-jupiter-params-5.5.1.jar;C:\Users\ojinadu1\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.1\junit-jupiter-engine-5.5.1.jar;C:\Users\ojinadu1\.m2\repository\org\junit\platform\junit-platform-engine\1.5.1\junit-platform-engine-1.5.1.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="java.vm.specification.version" value="23"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
-    <property name="sun.boot.library.path" value="/Users/apple/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_23.0.1.v20241024-1700/jre/lib"/>
-    <property name="sun.java.command" value="/Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App/target/surefire/surefirebooter17534532014967054911.jar /Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App/target/surefire 2025-03-06T18-39-27_358-jvmRun1 surefire10759550622873671938tmp surefire_09663836540806918658tmp"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.boot.library.path" value="C:\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\LOCAL_~1\Temp\surefire8133781782092741316\surefirebooter9008977141036896986.jar C:\Users\local_ojinadu1\Temp\surefire8133781782092741316 2025-05-04T23-05-28_211-jvmRun1 surefire5782826733374174047tmp surefire_06912970857624279527tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App/target/test-classes:/Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App/target/classes:/Users/apple/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/Users/apple/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-mac.jar:/Users/apple/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/Users/apple/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-mac.jar:/Users/apple/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/Users/apple/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-mac.jar:/Users/apple/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:/Users/apple/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-mac.jar:/Users/apple/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.1/junit-jupiter-api-5.5.1.jar:/Users/apple/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/apple/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple/.m2/repository/org/junit/platform/junit-platform-commons/1.5.1/junit-platform-commons-1.5.1.jar:/Users/apple/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.5.1/junit-jupiter-params-5.5.1.jar:/Users/apple/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.1/junit-jupiter-engine-5.5.1.jar:/Users/apple/.m2/repository/org/junit/platform/junit-platform-engine/1.5.1/junit-platform-engine-1.5.1.jar:"/>
+    <property name="surefire.test.class.path" value="C:\Users\ojinadu1\Documents\GitHub\Task-Manager\Code\Task-Manager-App\target\test-classes;C:\Users\ojinadu1\Documents\GitHub\Task-Manager\Code\Task-Manager-App\target\classes;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-controls\22.0.2\javafx-controls-22.0.2.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-controls\22.0.2\javafx-controls-22.0.2-win.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-graphics\22.0.2\javafx-graphics-22.0.2.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-graphics\22.0.2\javafx-graphics-22.0.2-win.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-base\22.0.2\javafx-base-22.0.2.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-base\22.0.2\javafx-base-22.0.2-win.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-fxml\22.0.2\javafx-fxml-22.0.2.jar;C:\Users\ojinadu1\.m2\repository\org\openjfx\javafx-fxml\22.0.2\javafx-fxml-22.0.2-win.jar;C:\Users\ojinadu1\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.1\junit-jupiter-api-5.5.1.jar;C:\Users\ojinadu1\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\ojinadu1\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ojinadu1\.m2\repository\org\junit\platform\junit-platform-commons\1.5.1\junit-platform-commons-1.5.1.jar;C:\Users\ojinadu1\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.5.1\junit-jupiter-params-5.5.1.jar;C:\Users\ojinadu1\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.1\junit-jupiter-engine-5.5.1.jar;C:\Users\ojinadu1\.m2\repository\org\junit\platform\junit-platform-engine\1.5.1\junit-platform-engine-1.5.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/Users/apple"/>
+    <property name="user.home" value="C:\Users\ojinadu1"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2024-10-15"/>
-    <property name="java.home" value="/Users/apple/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_23.0.1.v20241024-1700/jre"/>
-    <property name="file.separator" value="/"/>
-    <property name="basedir" value="/Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="C:\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\ojinadu1\Documents\GitHub\Task-Manager\Code\Task-Manager-App"/>
     <property name="style.color" value="always"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App/target/surefire/surefirebooter17534532014967054911.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\LOCAL_~1\Temp\surefire8133781782092741316\surefirebooter9008977141036896986.jar"/>
+    <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="java.runtime.version" value="23.0.1+11"/>
-    <property name="user.name" value="apple"/>
-    <property name="stdout.encoding" value="UTF-8"/>
-    <property name="path.separator" value=":"/>
-    <property name="os.version" value="13.6.9"/>
+    <property name="java.runtime.version" value="21.0.4+7-LTS"/>
+    <property name="user.name" value="ojinadu1"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="Temurin-23.0.1+11"/>
-    <property name="localRepository" value="/Users/apple/.m2/repository"/>
+    <property name="java.vendor.version" value="Temurin-21.0.4+7"/>
+    <property name="localRepository" value="C:\Users\ojinadu1\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
-    <property name="java.io.tmpdir" value="/var/folders/9c/zy2jf9w902752by0089hzhl00000gn/T/"/>
-    <property name="java.version" value="23.0.1"/>
-    <property name="user.dir" value="/Users/apple/Documents/GitHub/OluwatomiwaJinadu-COMP4200/Task-Manager/Code/Task-Manager-App"/>
-    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="C:\Users\LOCAL_~1\Temp\"/>
+    <property name="java.version" value="21.0.4"/>
+    <property name="user.dir" value="C:\Users\ojinadu1\Documents\GitHub\Task-Manager\Code\Task-Manager-App"/>
+    <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="native.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/apple/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551/jre/bin/server;C:/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551/jre/bin;C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Python312\Scripts\;C:\Program Files\Python312\;C:\Program Files\Python310\Scripts\;C:\Program Files\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\sqlite;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\Program Files\Azure Data Studio\bin;C:\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;c:\maven\bin;c:\flutter\bin;c:\AndroidSDK\cmdline-tools\latest\bin;C:\Program Files\MongoDB\mongosh-1.6.1-win32-x64\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Git\cmd;C:\Program Files\LINQPad8;C:\Program Files\TortoiseGit\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Redis\;C:\Users\ojinadu1\AppData\Local\Microsoft\WindowsApps;C:\Users\ojinadu1\AppData\Local\GitHubDesktop\bin;C:\Users\ojinadu1\AppData\Local\GitHubDesktop\app-3.4.19;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Eclipse Adoptium"/>
-    <property name="java.vm.version" value="23.0.1+11"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="java.class.version" value="67.0"/>
+    <property name="java.vm.version" value="21.0.4+7-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testValidInput{String, String, String, boolean}[1]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.041"/>
-  <testcase name="testValidInput{String, String, String, boolean}[2]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.001"/>
-  <testcase name="testInvalidInput{String, String, String, boolean}[1]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.005"/>
-  <testcase name="testInvalidInput{String, String, String, boolean}[2]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.001"/>
-  <testcase name="testInvalidInput{String, String, String, boolean}[3]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.001"/>
-  <testcase name="testInvalidInput{String, String, String, boolean}[4]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.001"/>
-  <testcase name="testInvalidInput{String, String, String, boolean}[5]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0"/>
+  <testcase name="testValidInput{String, String, String, boolean}[1]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.106"/>
+  <testcase name="testValidInput{String, String, String, boolean}[2]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.005"/>
+  <testcase name="testInvalidInput{String, String, String, boolean}[1]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.008"/>
+  <testcase name="testInvalidInput{String, String, String, boolean}[2]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.002"/>
+  <testcase name="testInvalidInput{String, String, String, boolean}[3]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.003"/>
+  <testcase name="testInvalidInput{String, String, String, boolean}[4]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.005"/>
+  <testcase name="testInvalidInput{String, String, String, boolean}[5]" classname="edu.westga.comp4420.task_manager.test.model.task.TestConstructor" time="0.005"/>
 </testsuite>
