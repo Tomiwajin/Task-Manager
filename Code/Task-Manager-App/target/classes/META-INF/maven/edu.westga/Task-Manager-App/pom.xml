@@ -106,7 +106,7 @@
 			<plugin><!-- generates code coverage report and requires minimum code coverage when executing test command -->
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.7</version>
+				<version>0.8.10</version>
 				<executions>
 					<execution>
 						<goals>

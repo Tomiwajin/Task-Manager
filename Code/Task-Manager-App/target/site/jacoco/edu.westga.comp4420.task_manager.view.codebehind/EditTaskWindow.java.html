@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EditTaskWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Task-Manager-App</a> &gt; <a href="index.source.html" class="el_package">edu.westga.comp4420.task_manager.view.codebehind</a> &gt; <span class="el_source">EditTaskWindow.java</span></div><h1>EditTaskWindow.java</h1><pre class="source lang-java linenums">package edu.westga.comp4420.task_manager.view.codebehind;
+
+import edu.westga.comp4420.task_manager.model.Task;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+
+import java.time.LocalDate;
+
+<span class="nc" id="L15">public class EditTaskWindow {</span>
+
+    @FXML
+    private DatePicker dueDatePicker;
+
+    @FXML
+    private RadioButton completeRadioButton;
+
+    @FXML
+    private RadioButton incompleteRadioButton;
+
+    @FXML
+    private Button updateButton;
+
+    @FXML
+    private Button cancelButton;
+
+    @FXML
+    private AnchorPane guiPane;
+
+    private Task taskToEdit;
+
+    @FXML
+    private void initialize() {
+<span class="nc" id="L39">        ToggleGroup statusGroup = new ToggleGroup();</span>
+<span class="nc" id="L40">        this.completeRadioButton.setToggleGroup(statusGroup);</span>
+<span class="nc" id="L41">        this.incompleteRadioButton.setToggleGroup(statusGroup);</span>
+<span class="nc" id="L42">    }</span>
+
+    public void setTaskToEdit(Task task) {
+<span class="nc" id="L45">        this.taskToEdit = task;</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">        if (task != null) {</span>
+<span class="nc" id="L47">            this.dueDatePicker.setValue(LocalDate.parse(task.getDueDate()));</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">            if (task.isCompleted()) {</span>
+<span class="nc" id="L49">                this.completeRadioButton.setSelected(true);</span>
+            } else {
+<span class="nc" id="L51">                this.incompleteRadioButton.setSelected(true);</span>
+            }
+        }
+<span class="nc" id="L54">    }</span>
+
+    @FXML
+    private void handleUpdateButtonAction() {
+<span class="nc" id="L58">        LocalDate dueDate = this.dueDatePicker.getValue();</span>
+<span class="nc" id="L59">        boolean isCompleted = this.completeRadioButton.isSelected();</span>
+
+<span class="nc bnc" id="L61" title="All 2 branches missed.">        if (dueDate == null) {</span>
+<span class="nc" id="L62">            this.showErrorAlert(&quot;Due date must be selected.&quot;);</span>
+<span class="nc" id="L63">            return;</span>
+        }
+
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        if (dueDate.isBefore(LocalDate.now())) {</span>
+<span class="nc" id="L67">            this.showErrorAlert(&quot;Due date cannot be in the past.&quot;);</span>
+<span class="nc" id="L68">            return;</span>
+        }
+
+<span class="nc" id="L71">        this.taskToEdit.setDueDate(dueDate.toString());</span>
+<span class="nc" id="L72">        this.taskToEdit.setCompleted(isCompleted);</span>
+
+<span class="nc" id="L74">        this.closeWindow();</span>
+<span class="nc" id="L75">    }</span>
+
+    @FXML
+    private void handleCancelButtonAction() {
+<span class="nc" id="L79">        this.closeWindow();</span>
+<span class="nc" id="L80">    }</span>
+
+    private void closeWindow() {
+<span class="nc" id="L83">        this.guiPane.getScene().getWindow().hide();</span>
+<span class="nc" id="L84">    }</span>
+
+    private void showErrorAlert(String message) {
+<span class="nc" id="L87">        Alert alert = new Alert(AlertType.ERROR);</span>
+<span class="nc" id="L88">        alert.setTitle(&quot;Error&quot;);</span>
+<span class="nc" id="L89">        alert.setHeaderText(null);</span>
+<span class="nc" id="L90">        alert.setContentText(message);</span>
+<span class="nc" id="L91">        alert.showAndWait();</span>
+<span class="nc" id="L92">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

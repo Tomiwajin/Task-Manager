@@ -1,6 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Task-Manager-App</a> &gt; <a href="index.source.html" class="el_package">edu.westga.comp4420.task_manager.view.codebehind</a> &gt; <span class="el_source">MainWindow.java</span></div><h1>MainWindow.java</h1><pre class="source lang-java linenums">package edu.westga.comp4420.task_manager.view.codebehind;
 
-<span class="nc" id="L3">public class MainWindow {</span>
+import edu.westga.comp4420.task_manager.Main;
+import edu.westga.comp4420.task_manager.model.Task;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TableCell;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
+import java.io.IOException;
+
+public class MainWindow {
+
+    @FXML
+    private TableView&lt;Task&gt; taskTable;
+
+    @FXML
+    private TableColumn&lt;Task, String&gt; titleColumn;
+
+    @FXML
+    private TableColumn&lt;Task, String&gt; descriptionColumn;
+
+    @FXML
+    private TableColumn&lt;Task, String&gt; dueDateColumn;
+
+    @FXML
+    private TableColumn&lt;Task, String&gt; statusColumn;
+
+    @FXML
+    private Button addTaskButton;
+
+    @FXML
+    private Button editTaskButton;
+    
+    @FXML
+    private Button deleteTaskButton;
+
+
+    private ObservableList&lt;Task&gt; taskList;
+
+<span class="nc" id="L53">    public MainWindow() {</span>
+<span class="nc" id="L54">        this.taskList = FXCollections.observableArrayList();</span>
+<span class="nc" id="L55">    }</span>
+
+    @FXML
+    public void initialize() {
+<span class="nc" id="L59">        this.titleColumn.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;title&quot;));</span>
+<span class="nc" id="L60">        this.descriptionColumn.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;description&quot;));</span>
+<span class="nc" id="L61">        this.dueDateColumn.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;dueDate&quot;));</span>
+
+<span class="nc" id="L63">        this.statusColumn.setCellValueFactory(cellData -&gt; {</span>
+<span class="nc" id="L64">            Task task = cellData.getValue();</span>
+<span class="nc" id="L65">            return new SimpleBooleanProperty(task.isCompleted()).asString();</span>
+        });
+
+<span class="nc" id="L68">        this.statusColumn.setCellFactory(column -&gt; new TableCell&lt;Task, String&gt;() {</span>
+            @Override
+            protected void updateItem(String item, boolean empty) {
+<span class="nc" id="L71">                super.updateItem(item, empty);</span>
+<span class="nc bnc" id="L72" title="All 4 branches missed.">                if (empty || item == null) {</span>
+<span class="nc" id="L73">                    setText(null);</span>
+                } else {
+<span class="nc" id="L75">                    boolean isCompleted = Boolean.parseBoolean(item);</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">                    setText(isCompleted ? &quot;Complete&quot; : &quot;Incomplete&quot;);</span>
+                }
+<span class="nc" id="L78">            }</span>
+        });
+
+<span class="nc" id="L81">        this.taskTable.setItems(this.taskList);</span>
+<span class="nc" id="L82">    }</span>
+
+    @FXML
+    private void handleAddTaskButtonAction() {
+        try {
+<span class="nc" id="L87">            FXMLLoader loader = new FXMLLoader();</span>
+<span class="nc" id="L88">            loader.setLocation(Main.class.getResource(Main.ADD_TASK_WINDOW_RESOURCE));</span>
+<span class="nc" id="L89">            loader.load();</span>
+
+<span class="nc" id="L91">            Parent parent = loader.getRoot();</span>
+<span class="nc" id="L92">            Scene scene = new Scene(parent);</span>
+<span class="nc" id="L93">            Stage addTaskStage = new Stage();</span>
+<span class="nc" id="L94">            addTaskStage.setTitle(&quot;Add Task&quot;);</span>
+<span class="nc" id="L95">            addTaskStage.setScene(scene);</span>
+<span class="nc" id="L96">            addTaskStage.initModality(Modality.APPLICATION_MODAL);</span>
+
+<span class="nc" id="L98">            AddTaskWindow addTaskWindowController = (AddTaskWindow) loader.getController();</span>
+<span class="nc" id="L99">            addTaskWindowController.setTaskList(this.taskList);</span>
+
+<span class="nc" id="L101">            addTaskStage.showAndWait();</span>
+
+<span class="nc" id="L103">        } catch (IOException e) {</span>
+<span class="nc" id="L104">            e.printStackTrace();</span>
+<span class="nc" id="L105">            Alert errorBox = new Alert(Alert.AlertType.ERROR);</span>
+<span class="nc" id="L106">            errorBox.setContentText(&quot;Unable to open add task window&quot;);</span>
+<span class="nc" id="L107">            errorBox.showAndWait();</span>
+<span class="nc" id="L108">        }</span>
+<span class="nc" id="L109">    }</span>
+
+    @FXML
+    private void handleEditTaskButtonAction() {
+<span class="nc" id="L113">        Task selectedTask = this.taskTable.getSelectionModel().getSelectedItem();</span>
+<span class="nc bnc" id="L114" title="All 2 branches missed.">        if (selectedTask == null) {</span>
+<span class="nc" id="L115">            Alert alert = new Alert(Alert.AlertType.WARNING);</span>
+<span class="nc" id="L116">            alert.setTitle(&quot;No Task Selected&quot;);</span>
+<span class="nc" id="L117">            alert.setHeaderText(null);</span>
+<span class="nc" id="L118">            alert.setContentText(&quot;Please select a task to edit.&quot;);</span>
+<span class="nc" id="L119">            alert.showAndWait();</span>
+<span class="nc" id="L120">            return;</span>
+        }
+        try {
+<span class="nc" id="L123">            FXMLLoader loader = new FXMLLoader();</span>
+<span class="nc" id="L124">            loader.setLocation(Main.class.getResource(Main.EDIT_TASK_WINDOW_RESOURCE));</span>
+<span class="nc" id="L125">            loader.load();</span>
+<span class="nc" id="L126">            Parent parent = loader.getRoot();</span>
+<span class="nc" id="L127">            Scene scene = new Scene(parent);</span>
+<span class="nc" id="L128">            Stage editTaskStage = new Stage();</span>
+<span class="nc" id="L129">            editTaskStage.setTitle(&quot;Edit Task&quot;);</span>
+<span class="nc" id="L130">            editTaskStage.setScene(scene);</span>
+<span class="nc" id="L131">            editTaskStage.initModality(Modality.APPLICATION_MODAL);</span>
+<span class="nc" id="L132">            EditTaskWindow editTaskWindowController = (EditTaskWindow) loader.getController();</span>
+<span class="nc" id="L133">            editTaskWindowController.setTaskToEdit(selectedTask);</span>
+<span class="nc" id="L134">            editTaskStage.showAndWait();</span>
+
+<span class="nc" id="L136">            this.taskTable.refresh();</span>
+
+<span class="nc" id="L138">        } catch (IOException e) {</span>
+<span class="nc" id="L139">            e.printStackTrace();</span>
+<span class="nc" id="L140">            Alert errorBox = new Alert(Alert.AlertType.ERROR);</span>
+<span class="nc" id="L141">            errorBox.setContentText(&quot;Unable to open edit task window&quot;);</span>
+<span class="nc" id="L142">            errorBox.showAndWait();</span>
+<span class="nc" id="L143">        }</span>
+<span class="nc" id="L144">    }</span>
+    
+    @FXML
+    private void handleDeleteTaskButtonAction() {
+<span class="nc" id="L148">        Task selectedTask = this.taskTable.getSelectionModel().getSelectedItem();</span>
+        
+<span class="nc bnc" id="L150" title="All 2 branches missed.">        if (selectedTask == null) {</span>
+<span class="nc" id="L151">            Alert alert = new Alert(Alert.AlertType.WARNING);</span>
+<span class="nc" id="L152">            alert.setTitle(&quot;No Task Selected&quot;);</span>
+<span class="nc" id="L153">            alert.setHeaderText(null);</span>
+<span class="nc" id="L154">            alert.setContentText(&quot;Please select a task to delete.&quot;);</span>
+<span class="nc" id="L155">            alert.showAndWait();</span>
+<span class="nc" id="L156">            return;</span>
+        }
+
+<span class="nc" id="L159">        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);</span>
+<span class="nc" id="L160">        confirmationAlert.setTitle(&quot;Delete Task&quot;);</span>
+<span class="nc" id="L161">        confirmationAlert.setHeaderText(null);</span>
+<span class="nc" id="L162">        confirmationAlert.setContentText(&quot;Are you sure you want to delete this task?&quot;);</span>
+
+<span class="nc" id="L164">        confirmationAlert.showAndWait().ifPresent(response -&gt; {</span>
+<span class="nc bnc" id="L165" title="All 2 branches missed.">            if (response == ButtonType.OK) {</span>
+<span class="nc" id="L166">                this.taskList.remove(selectedTask);</span>
+<span class="nc" id="L167">                this.taskTable.refresh();</span>
+            }
+<span class="nc" id="L169">        });</span>
+<span class="nc" id="L170">    }</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
