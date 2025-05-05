@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 });
 
 // route to about page
-app.get('/downlad', function(req, res) {
+app.get('/download', function(req, res) {
 	res.render('page/download');
 });
 
